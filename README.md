@@ -29,10 +29,10 @@ To clone and run this project:
 
 ```bash
 # Clone the repository
-git clone [YOUR_GITHUB_REPO_LINK]
+git clone https://github.com/Charithkakarla/BistroBliss-MyVersion.git
 
 # Navigate to the project directory
-cd Whisk-and-Roll-FullStack
+cd Whisk&Roll
 
 # Install dependencies
 npm install
@@ -51,9 +51,7 @@ npm start
 
 ## Visit the Website
 
-For the live website, visit: [YOUR_WEBSITE_URL]
-
-For the source code, visit: [YOUR_GITHUB_REPO_LINK]
+For the source code, visit: https://github.com/Charithkakarla/BistroBliss-MyVersion.git
 
 ---
 
