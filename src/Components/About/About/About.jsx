@@ -12,15 +12,15 @@ const About = () => {
     {
       id: 1,
       title: "Come and visit us",
-      callPhone: "(414) 857 - 0107",
+      callPhone: "+91 9876543210",
       location: <CiLocationOn />,
       mail: <CiMail />,
       call: <IoCallOutline />,
       icon: "",
       mesg: "",
-      gmail: "happytummy@restaurant.com",
+      gmail: "WhisknRoll@gmail.com",
       gps: "",
-      infogps: "837 W. Marshall Lane Marshalltown, IA 50158, Los Angeles",
+      infogps: "Banjara Hills, Hyderabad, Telangana 500034",
       image: picture,
     },
   ];

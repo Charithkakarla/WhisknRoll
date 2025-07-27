@@ -9,15 +9,15 @@ const HealthyFood = () => {
     {
       id: 1,
       title: "Come and visit us",
-      callPhone: "+20 111 718 9056",
+      callPhone: "+91 9876543210",
       location: <CiLocationOn />,
       mail: <CiMail />,
       call: <IoCallOutline />,
       icon: "",
       mesg: "",
-      gmail: "howare7amo99@gmail.com",
+      gmail: "WhisknRoll@gmail.com",
       gps: "",
-      infogps: "837 W. Marshall Lane Marshalltown, IA 50158, Los Angeles",
+      infogps: "Banjara Hills, Hyderabad, Telangana 500034",
       image: picture,
     },
   ];

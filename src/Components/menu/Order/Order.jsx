@@ -55,8 +55,7 @@ const Order = () => {
           <div className={Css.card}>
             <h3>You can order through apps</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipiscing elit enim
-              bibendum sed et aliquet aliquet risus tempor semper.
+              Experience the convenience of ordering your favorite dishes from the comfort of your home! We partner with popular food delivery platforms like Swiggy, Zomato, Uber Eats, and Dunzo to bring our delicious menu right to your doorstep. Enjoy our authentic flavors and premium dining experience wherever you are.
             </p>
           </div>
           <div className={Css.card}>

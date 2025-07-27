@@ -11,8 +11,8 @@ const Customers = () => {
       descraption:
         "Last night, we dined at place and were simply blown away. From the moment we stepped in, we were enveloped in an inviting atmosphere and greeted with warm smiles.",
       image: picture1,
-      name: "Sophire Robson",
-      allocated: "Los Angeles, CA",
+      name: "Arjun Singh",
+      allocated: "Hyderabad, Telangana",
     },
     {
       id: 2,
@@ -21,8 +21,8 @@ const Customers = () => {
         "Place exceeded my expectations on all fronts. The ambiance was cozy and relaxed, making it a perfect venue for our anniversary dinner. Each dish was prepared and beautifully presented.",
 
       image: picture2,
-      name: "Matt Cannon",
-      allocated: "San Diego, CA",
+      name: "Fatima Khan",
+      allocated: "Warangal, Telangana",
     },
     {
       id: 3,
@@ -31,8 +31,8 @@ const Customers = () => {
         "The culinary experience at place is first to none. The atmosphere is vibrant, the food - nothing short of extraordinary. The food was the highlight of our evening. Highly recommended.",
 
       image: picture3,
-      name: "Andy Smith",
-      allocated: "San Francisco, CA",
+      name: "Aisha Ahmed",
+      allocated: "Karimnagar, Telangana",
     },
   ];
   return (

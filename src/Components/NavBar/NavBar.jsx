@@ -3,7 +3,6 @@ import Css from "./NavBar.module.css";
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import logo from "../Pictures/Logo.jpg";
-import Information from "../Information/Information";
 import { FaArrowUp, FaUser } from "react-icons/fa6";
 import axios from "axios";
 import { IoIosLogOut } from "react-icons/io";
@@ -54,12 +53,11 @@ const NavBar = () => {
   // window.onload = refresh;
   return (
     <div>
-      <Information />
       <header>
         <nav>
           <div className={Css.img}>
             <img src={logo} alt="" />
-            <h3>Bistro Bliss</h3>
+            <h3>Whisk & Roll</h3>
           </div>
           <ul className={`${Css.hide} ${setClass ? Css.show : ""}`}>
             <li>

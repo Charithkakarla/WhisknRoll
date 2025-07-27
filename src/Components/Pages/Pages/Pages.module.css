@@ -5,6 +5,19 @@
   justify-content: center;
   align-items: center;
   padding: 50px 0;
+  background-color: #121212;
+  position: relative;
+}
+
+.parent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+  pointer-events: none;
 }
 .container {
   width: 85%;
@@ -50,14 +63,26 @@
 }
 
 .card .text h3 {
-  color: var(--Neutral-07, #2c2f24);
+  color: #EDEDED;
   text-align: center;
-  font-family: " Playfair Display";
+  font-family: "Playfair Display";
   font-size: 55px;
   font-style: normal;
   font-weight: 500;
   line-height: 60.5px;
   width: 900px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.h3 {
+  color: #EDEDED;
+  text-align: center;
+  font-family: "Playfair Display";
+  font-size: 55px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 60.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 /* Here for 2nd Card for Style */
 
@@ -71,8 +96,8 @@
   gap: 10px;
 }
 .card:nth-child(2) .text h3 {
-  color: var(--Neutral-07, #2c2f24);
-  font-family: "DM Sans";
+  color: #EDEDED;
+  font-family: "Playfair Display";
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -81,8 +106,8 @@
   text-align: start;
 }
 .card:nth-child(2) .text p {
-  color: var(--Neutral-06, #414536);
-  font-family: "DM Sans";
+  color: #A0A0A0;
+  font-family: "Lato", "Inter", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -106,8 +131,8 @@
   width: 90%;
 }
 .card:nth-child(3) .text h3 {
-  color: var(--Neutral-07, #2c2f24);
-  font-family: "DM Sans";
+  color: #EDEDED;
+  font-family: "Playfair Display";
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -116,8 +141,8 @@
   text-align: start;
 }
 .card:nth-child(3) .text p {
-  color: var(--Neutral-06, #414536);
-  font-family: "DM Sans";
+  color: #A0A0A0;
+  font-family: "Lato", "Inter", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;

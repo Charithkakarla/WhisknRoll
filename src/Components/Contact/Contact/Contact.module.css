@@ -5,6 +5,19 @@
   justify-content: center;
   align-items: center;
   padding: 60px 0;
+  background-color: #1a1a1a;
+  position: relative;
+}
+
+.parent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(215, 38, 56, 0.05) 100%);
+  pointer-events: none;
 }
 .container {
   width: 85%;
@@ -33,21 +46,22 @@
   flex-direction: column;
 }
 .container .text h3 {
-  color: var(--Neutral-07, #2c2f24);
+  color: #EDEDED;
   text-align: center;
-  font-family: " Playfair Display";
+  font-family: "Playfair Display";
   font-size: 100px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 96px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 .container .text p {
-  color: var(--Neutral-06, #495460);
+  color: #A0A0A0;
   text-align: center;
-  font-family: "DM Sans";
+  font-family: "Lato", "Inter", sans-serif;
   font-size: 18px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 28px;
   width: 45%;
 }
@@ -60,9 +74,10 @@
   flex-direction: column;
   gap: 10px;
   border-radius: 16px;
-  background: var(--Neutral-01, #fff);
-  box-shadow: 0px 2.979px 59.574px 0px rgba(0, 0, 0, 0.08);
+  background: #1E1E1E;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
   padding: 10px;
+  border: 2px solid #D4AF37;
 }
 .card form input {
   display: flex;
@@ -72,9 +87,19 @@
   gap: 10px;
   align-self: stretch;
   border-radius: 72px;
-  border: 1px solid var(--Neutral-03, #dbdfd0);
-  background: var(--Neutral-01, #fff);
-  outline-color: #8783f5;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #2a2a2a;
+  outline-color: #D4AF37;
+  font-weight: 600;
+  font-family: "Lato", "Inter", sans-serif;
+  color: #EDEDED;
+  transition: all 0.3s ease-in-out;
+}
+
+.card form input:focus {
+  border: 1px solid #D4AF37;
+  background: #333333;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
 }
 .card form textarea {
   display: flex;
@@ -84,9 +109,19 @@
   gap: 10px;
   align-self: stretch;
   border-radius: 16px;
-  border: 1px solid var(--Neutral-03, #dbdfd0);
-  background: var(--Neutral-01, #fff);
-  outline-color: #8783f5;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #2a2a2a;
+  outline-color: #D4AF37;
+  font-weight: 600;
+  font-family: "Lato", "Inter", sans-serif;
+  color: #EDEDED;
+  transition: all 0.3s ease-in-out;
+}
+
+.card form textarea:focus {
+  border: 1px solid #D4AF37;
+  background: #333333;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
 }
 .card form button {
   display: flex;
@@ -96,7 +131,7 @@
   gap: 10px;
   align-self: stretch;
   border-radius: 118px;
-  background: #ad343e;
+  background: #2C6B47;
   color: var(--Neutral-01, #fff);
   text-align: right;
   font-family: "DM Sans";
@@ -104,6 +139,13 @@
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
+  transition: all 0.3s ease;
+}
+.card form button:hover {
+  background: #FFD700;
+  color: #2C6B47;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(44, 107, 71, 0.3);
 }
 .card .email {
   width: 100%;
@@ -121,7 +163,7 @@
   height: auto;
   width: auto;
 }
-.email input {
+.card .email input {
   display: flex;
   width: 350px;
   height: 60px;
@@ -129,15 +171,26 @@
   align-items: center;
   gap: 10px;
   border-radius: 72px;
-  border: 1px solid var(--Neutral-03, #dbdfd0);
-  background: var(--Neutral-01, #fff);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #2a2a2a;
+  outline-color: #D4AF37;
+  font-weight: 600;
+  font-family: "Lato", "Inter", sans-serif;
+  color: #EDEDED;
+  transition: all 0.3s ease-in-out;
+}
+
+.card .email input:focus {
+  border: 1px solid #D4AF37;
+  background: #333333;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
 }
 .card form label {
-  color: var(--Neutral-07, #2c2f24);
-  font-family: "DM Sans";
+  color: #EDEDED;
+  font-family: "Lato", "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 24px;
 }
 /* Here for Media Query */

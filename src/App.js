@@ -30,7 +30,7 @@ import Profile from "./Components/Profile/Profile";
 // import Loading from "./Components/Loading/Loading";
 function App() {
   useEffect((r) => {
-    Aos.init({ duration: 2000 });
+    Aos.init({ duration: 800 });
   }, []);
   return (
     <div className="App">

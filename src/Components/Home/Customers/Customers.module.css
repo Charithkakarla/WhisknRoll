@@ -6,15 +6,30 @@
   align-items: center;
   flex-direction: column;
   gap: 15px;
+  background-color: #121212;
+  padding: 40px 0;
+  position: relative;
+}
+
+.parent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+  pointer-events: none;
 }
 .parent h3 {
-  color: var(--neutral-07, #2c2f24);
+  color: #EDEDED;
   text-align: center;
   font-family: "Playfair Display";
   font-size: 55px;
   font-style: normal;
   font-weight: 500;
   line-height: 60.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 .container {
   width: 85%;
@@ -32,10 +47,16 @@
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  background-color: #1E1E1E;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
 }
 .container .card h3 {
-  color: #ad343e;
-  font-family: "DM Sans";
+  color: #D72638;
+  font-family: "Playfair Display";
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -44,8 +65,8 @@
 }
 .container .card p {
   width: 300px;
-  color: var(--neutral-06, #414536);
-  font-family: "DM Sans";
+  color: #A0A0A0;
+  font-family: "Lato", "Inter", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -92,8 +113,8 @@
 }
 
 .aboutus p {
-  color: var(--neutral-06, #414536);
-  font-family: "DM Sans";
+  color: #A0A0A0;
+  font-family: "Lato", "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -101,12 +122,25 @@
   width: 100% !important;
 }
 .aboutus h3 {
-  color: var(--neutral-07, #2c2f24);
-  font-family: "DM Sans";
+  color: #EDEDED;
+  font-family: "Playfair Display";
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 24px; /* 150% */
+}
+
+/* Hover Effects */
+.container .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.container .card:hover h3 {
+  color: #D4AF37;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Here for Media Query */

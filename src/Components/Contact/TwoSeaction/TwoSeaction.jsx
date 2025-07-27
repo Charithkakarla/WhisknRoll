@@ -5,7 +5,7 @@ const TwoSeaction = () => {
     {
       id: 1,
       title: "Call Us",
-      descraption: "+201117189056",
+      descraption: "+91 9876543210",
     },
     {
       id: 2,
@@ -15,7 +15,7 @@ const TwoSeaction = () => {
     {
       id: 3,
       title: "Our Location:",
-      descraption: "123 Bridge Street Nowhere Land, LA 12345 United States",
+      descraption: "Banjara Hills, Hyderabad, Telangana 500034",
     },
   ];
   return (

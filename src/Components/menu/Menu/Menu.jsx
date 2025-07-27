@@ -10,7 +10,6 @@ const Menu = () => {
         <div className={Css.container}>
           <nav>
             <h3>Our Menu</h3>
-            <p> We consider all the drivers of change gives you the components you need to change to create a truly happens.</p>
             <ul className="menu">
               <li>
                 <NavLink to="/menu">All</NavLink>
@@ -28,6 +27,7 @@ const Menu = () => {
                 <NavLink to="/menu/dessart">Desserts</NavLink>
               </li>
             </ul>
+            <p style={{marginTop: '18px'}}>Browse our menu and discover something delicious for every craving!</p>
           </nav>
           <div className={Css.card}>
             <Outlet></Outlet>

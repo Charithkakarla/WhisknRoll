@@ -7,6 +7,20 @@
   flex-direction: column;
   gap: 15px;
   overflow: hidden;
+  background-color: #121212;
+  padding: 40px 0;
+  position: relative;
+}
+
+.parent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+  pointer-events: none;
 }
 .parent .paragraph {
   width: 85%;
@@ -17,12 +31,13 @@
   flex-direction: row;
 }
 .paragraph h3 {
-  color: var(--neutral-07, #2c2f24);
+  color: #EDEDED;
   font-family: "Playfair Display";
   font-size: 55px;
   font-style: normal;
   font-weight: 500;
   line-height: 60.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 .paragraph a {
   text-decoration: none;
@@ -32,9 +47,9 @@
   align-items: center;
   gap: 10px;
   border-radius: 118px;
-  background: #ad343e;
+  background: #D72638;
   color: #fff;
-  transition: 0.6s;
+  transition: all 0.3s ease-in-out;
 }
 
 .container {
@@ -51,13 +66,18 @@
   width: 550px;
   height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
   flex-direction: column;
+  background-color: #1E1E1E;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
 }
 .card .img {
   width: 100%;
   height: 68%;
+  overflow: hidden;
 }
 .card img {
   height: 100%;
@@ -68,26 +88,29 @@
   width: 100%;
   height: 32%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  padding: 0 10px;
+  padding: 20px;
+  background-color: #1E1E1E;
+  position: relative;
+  z-index: 10;
 }
 .card .text p {
-  color: var(--neutral-06, #414536);
-  font-family: "DM Sans";
-  font-size: 16px;
+  color: #A0A0A0;
+  font-family: "Lato", "Inter", sans-serif;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 20px;
 }
 .card .text h3 {
-  color: var(--neutral-07, #2c2f24);
-  font-family: "DM Sans";
-  font-size: 20px;
+  color: #EDEDED;
+  font-family: "Playfair Display";
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 26px;
+  line-height: 22px;
 }
 
 /* Here for 2nd card for Style */
@@ -100,9 +123,9 @@
   flex-direction: column;
   overflow: hidden;
   border-radius: 12px;
-  border: 1px solid var(--neutral-02, #f9f9f7);
-  background: var(--neutral-01, #fff);
-  box-shadow: 0px 2.979px 59.574px 0px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1E1E1E;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
 }
 .card:nth-child(2) {
   flex-direction: row;
@@ -121,19 +144,22 @@
   align-items: flex-start;
   flex-direction: column;
   gap: 10px;
-  padding: 0 15px;
+  padding: 15px;
+  background-color: #1E1E1E;
+  position: relative;
+  z-index: 10;
 }
 .cards .texts p {
-  color: var(--neutral-05, #737865);
-  font-family: "DM Sans";
+  color: #A0A0A0;
+  font-family: "Lato", "Inter", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
 }
 .cards .texts h3 {
-  color: var(--neutral-07, #2c2f24);
-  font-family: "DM Sans";
+  color: #EDEDED;
+  font-family: "Playfair Display";
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -142,10 +168,12 @@
 
 /* Here for Hover */
 .paragraph a:hover {
-  background-color: transparent;
-  border: 1px solid #ad343e;
-  transition: 0.6s;
-  color: #ad343e;
+  background-color: #D4AF37;
+  border: 1px solid #D4AF37;
+  color: #121212;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease-in-out;
 }
 /* Here for Media Query */
 @media (max-width: 1265px) {

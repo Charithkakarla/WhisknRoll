@@ -5,16 +5,18 @@ import Picture2 from "../Pictures/steve-footer.jpg";
 import Picture3 from "../Pictures/potatos-footer.jpg";
 import Picture4 from "../Pictures/ash-footer.jpg";
 import logo from "../Pictures/logoFooter.jpg";
-import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { CiPhone, CiMail } from "react-icons/ci";
 import { Link } from "react-router-dom";
+
 const Footer = () => {
   const firstCard = [
     {
       id: 1,
-      title: "Bistro Bliss",
+      title: "Whisk & Roll",
       descrpation:
         "In the new era of technology we look a in the future with certainty and pride to for our company and.",
-      icon: <FaFacebookF />,
+      icon: <FaInstagram />,
       image: logo,
     },
   ];
@@ -45,21 +47,31 @@ const Footer = () => {
             {firstCard?.map((r) => (
               <div className={Css.cards} key={r.id}>
                 <div className={Css.img}>
-                  <img src={r.image} alt="" />
+                  <img src={logo} alt="Whisk & Roll Logo" />
                   <h3>{r.title}</h3>
                 </div>
                 <div className={Css.text}>
                   <p>{r.descrpation}</p>
                   <div className={Css.icons}>
-                    <Link to="https://www.facebook.com/profile.php?id=100012706116123">
+                    <Link to="https://www.instagram.com/charith__kakarla/">
                       {r.icon}
                     </Link>
-                    <Link to="https://github.com/Mohamed-Adel0">
+                    <Link to="https://github.com/Charithkakarla">
                       <FaGithub />
                     </Link>
-                    <Link to="https://www.linkedin.com/in/mohamed-adel-226611286/">
+                    <Link to="https://www.linkedin.com/in/kakarla-charith-377512295/">
                       <FaLinkedinIn />
                     </Link>
+                  </div>
+                  <div className={Css.contact}>
+                    <div className={Css.contactItem}>
+                      <CiPhone />
+                      <span>+91 9876543210</span>
+                    </div>
+                    <div className={Css.contactItem}>
+                      <CiMail />
+                      <span>WhisknRoll@gmail.com</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -113,8 +125,8 @@ const Footer = () => {
           </div>
         </div>
         <h3>
-          Copyright © 2024 Hashtag Developer. All Rights Reserved By{" "}
-          <span>Mohamed-Adel</span>
+          Copyright © 2025 Whisk & Roll. All Rights Reserved By{" "}
+          <span>Kakarla Charith</span>
         </h3>
       </div>
     </div>

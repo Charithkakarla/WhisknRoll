@@ -1,11 +1,25 @@
 .parent {
   width: 100%;
-  height: 100vh;
-  min-height: 100vh;
+  height: 80vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #121212;
+  padding: 40px 0;
+  position: relative;
+}
+
+.parent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+  pointer-events: none;
 }
 .parent .container {
   width: 100%;
@@ -15,11 +29,12 @@
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .container .card {
   width: 100%;
-  height: 400px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +49,7 @@
 .img img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 /* Here for bg for black ground */
 .img .bg {
@@ -56,13 +72,14 @@
 }
 .bg h3 {
   width: 596px;
-  color: var(--neutral-01, #fff);
+  color: #EDEDED;
   text-align: center;
   font-family: "Playfair Display";
   font-size: 55px;
   font-style: normal;
   font-weight: 500;
   line-height: 60.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 /* Here for New Card for style */
 .card:nth-child(2) {
@@ -102,17 +119,17 @@
   height: 48px;
 }
 .text h3 {
-  color: (#2c2f24);
+  color: #EDEDED;
   text-align: center;
-  font-family: "DM Sans";
+  font-family: "Playfair Display";
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: 26px;
 }
 .text p {
-  color: (#414536);
-  font-family: "DM Sans";
+  color: #A0A0A0;
+  font-family: "Lato", "Inter", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -121,13 +138,13 @@
 .button {
   display: flex;
   justify-content: center;
-  color: #282828;
+  color: #121212;
   width: 80px;
   height: 80px;
   border-radius: 100%;
-  background: #fff;
+  background: #D4AF37;
   transition: all 0.3s ease-in-out 0s;
-  box-shadow: rgba(193, 244, 246, 0.698) 0px 0px 0px 0px;
+  box-shadow: rgba(212, 175, 55, 0.4) 0px 0px 0px 0px;
   animation: 1.2s cubic-bezier(0.8, 0, 0, 1) 0s infinite normal none running
     pulse;
   align-items: center;
@@ -140,7 +157,7 @@
 
 @keyframes pulse {
   100% {
-    box-shadow: 0 0 0 45px rgba(193, 244, 246, 0);
+    box-shadow: 0 0 0 45px rgba(212, 175, 55, 0);
   }
 }
 
@@ -148,16 +165,16 @@
 @media (max-width: 1265px) {
   .parent {
     height: auto;
-    padding: 20px 0;
+    padding: 10px 0;
   }
   .container {
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
     overflow: hidden;
   }
   .container .card {
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
   }
 }
 @media (max-width: 1024px) {

@@ -13,33 +13,33 @@ const Articles = () => {
       title:
         "The secret tips & tricks to prepare a perfect burger & pizza for our customers",
       descraption:
-        "Lorem ipsum dolor sit amet consectetur of a adipiscing elitilmim semper adipiscing massa gravida nisi cras enim quis nibholm varius amet gravida ut facilisis neque egestas.",
+        "Unlock the secrets to mouth-watering burgers and pizzas: use fresh, high-quality ingredients, season your patties just before grilling, and let your dough rise slowly for the perfect crust. Always cook on high heat for a crispy outside and juicy inside. Don’t forget to rest your meat and use a pizza stone for that authentic flavor!",
       image: picture1,
-      month: "January 3, 2023",
+      month: "February 12, 2025",
     },
   ];
   const newProducts = [
     {
       id: 1,
-      month: "January 3, 2023",
+      month: "March 8, 2025",
       title: "How to prepare the perfect french fries in an air fryer",
       image: picture2,
     },
     {
       id: 2,
-      month: "Math 3, 2023",
+      month: "April 15, 2025",
       title: "How to prepare delicious chicken tenders",
       image: picture3,
     },
     {
       id: 3,
-      month: "Math 3, 2023",
+      month: "June 21, 2025",
       title: "7 delicious cheesecake recipes you can prepare",
       image: picture4,
     },
     {
       id: 4,
-      month: "December 3, 2023",
+      month: "October 2, 2025",
       title: "5 great pizza restaurants you should visit this city",
       image: picture5,
     },

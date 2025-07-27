@@ -47,21 +47,21 @@ const Profile = () => {
                 <Link
                   style={{ backgroundColor: `hsl(${random}, 70%, 54%)` }}
                   target="_blank"
-                  to="https://www.facebook.com/profile.php?id=100012706116123"
+                  to="https://www.facebook.com/kakarla.charith"
                 >
                   <FaFacebookF />
                 </Link>
                 <Link
                   style={{ backgroundColor: `hsl(${random}, 70%, 54%)` }}
                   target="_blank"
-                  to="https://github.com/Mohamed-Adel0"
+                  to="https://github.com/KakarlaCharith"
                 >
                   <FaGithub />
                 </Link>
                 <Link
                   style={{ backgroundColor: `hsl(${random}, 70%, 54%)` }}
                   target="_blank"
-                  to="https://www.linkedin.com/in/mohamed-adel-226611286/"
+                  to="https://www.linkedin.com/in/kakarla-charith-377512295/"
                 >
                   <FaLinkedinIn />
                 </Link>

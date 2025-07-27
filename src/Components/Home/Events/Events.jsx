@@ -13,28 +13,28 @@ const Events = () => {
     {
       id: 1,
       title: "Caterings",
-      des: "In the new era of technology we look in the future with certainty for life.",
+      des: "Professional catering services for corporate events, private parties, and special occasions. Custom menus tailored to your preferences and dietary requirements.",
       image: picture1,
       twoImage : endCaterings
     },
     {
       id: 2,
       title: "Birthdays",
-      des: "In the new era of technology we look in the future with certainty for life.",
+      des: "Celebrate your special day with our exclusive birthday catering packages. From intimate gatherings to grand celebrations, we make every moment memorable.",
       image: picture2,
       twoImage : endBirthdays
     },
     {
       id: 3,
       title: "Weddings",
-      des: "In the new era of technology we look in the future with certainty for life.",
+      des: "Make your wedding day perfect with our elegant wedding catering services. From traditional ceremonies to modern receptions, we create unforgettable dining experiences.",
       image: picture3,
       twoImage : endWeddings
     },
     {
       id: 4,
       title: "Events",
-      des: "In the new era of technology we look in the future with certainty for life.",
+      des: "Comprehensive event planning and catering for all types of celebrations. From anniversaries to corporate functions, we handle every detail with precision.",
       image: picture4,
       twoImage : endEvents
     },
