@@ -29,7 +29,7 @@ To clone and run this project:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Charithkakarla/BistroBliss-MyVersion.git
+git clone https://github.com/Charithkakarla/Whisk-Roll.git
 
 # Navigate to the project directory
 cd Whisk&Roll
@@ -51,7 +51,7 @@ npm start
 
 ## Visit the Website
 
-For the source code, visit: https://github.com/Charithkakarla/BistroBliss-MyVersion.git
+For the source code, visit: https://github.com/Charithkakarla/Whisk-Roll.git
 
 ---
 
