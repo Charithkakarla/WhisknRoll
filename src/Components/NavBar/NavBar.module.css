@@ -287,6 +287,33 @@ header button {
   header li {
     padding: 13px 10px;
   }
+  
+  header .show li {
+    width: 100%;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  header .show li:last-child {
+    border-bottom: none;
+  }
+  
+  header .show a {
+    color: #ffffff !important;
+    font-weight: 500;
+    font-size: 16px;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  
+  header .show a:hover,
+  header .show a.active {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border-radius: 8px;
+    margin: 0 10px !important;
+  }
   /* header .icons {
     width: 200px;
   } */
@@ -316,17 +343,21 @@ header button {
 
   header .show {
     position: absolute;
-    top: 49%;
-    left: -8%;
-    right: -8.2%;
+    top: 100%;
+    left: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 1;
-    transition: 1s;
-    background-color: #fff;
+    transition: 0.3s ease-in-out;
+    background-color: #000000;
     border: 1px solid rgba(116, 111, 111, 0.473);
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    margin: 0 10px;
   }
 
   .dropdownMenu li {
