@@ -11,6 +11,10 @@ const NavBar = () => {
   const Menu = () => {
     getClass(!setClass);
   };
+  
+  const closeMenu = () => {
+    getClass(false);
+  };
   const [scroll, setScroll] = useState(false);
   const eventScroll = () => {
     if (window.scrollY > 1308) {
@@ -61,19 +65,19 @@ const NavBar = () => {
           </div>
           <ul className={`${Css.hide} ${setClass ? Css.show : ""}`}>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/" onClick={closeMenu}>Home</NavLink>
             </li>
             <li>
-              <NavLink to="about">About</NavLink>
+              <NavLink to="about" onClick={closeMenu}>About</NavLink>
             </li>
             <li>
-              <NavLink to="menu">Menu</NavLink>
+              <NavLink to="menu" onClick={closeMenu}>Menu</NavLink>
             </li>
             <li>
-              <NavLink to="pages">Pages</NavLink>
+              <NavLink to="pages" onClick={closeMenu}>Pages</NavLink>
             </li>
             <li>
-              <NavLink to="contact">Contact</NavLink>
+              <NavLink to="contact" onClick={closeMenu}>Contact</NavLink>
             </li>
           </ul>
           <div className={Css.icon}>

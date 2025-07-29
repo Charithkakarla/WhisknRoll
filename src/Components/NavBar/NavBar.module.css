@@ -290,12 +290,18 @@ header button {
   
   header .show li {
     width: 100%;
-    padding: 15px 10px;
+    padding: 8px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
   }
   
   header .show li:last-child {
     border-bottom: none;
+  }
+  
+  header .show li:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
   }
   
   header .show a {
@@ -305,14 +311,19 @@ header button {
     width: 100%;
     display: block;
     text-align: center;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
   }
   
   header .show a:hover,
   header .show a.active {
     background-color: #ffff00 !important;
     color: #000000 !important;
-    border-radius: 8px;
-    margin: 0 10px !important;
+    border-radius: 6px;
+    font-weight: 600;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 255, 0, 0.3);
   }
   /* header .icons {
     width: 200px;
@@ -336,6 +347,15 @@ header button {
     font-size: 25px;
     font-weight: 300;
     background-color: transparent;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .menu button:hover {
+    color: #ffff00;
+    transform: scale(1.1);
   }
   nav {
     position: relative;
@@ -353,10 +373,10 @@ header button {
     opacity: 1;
     transition: 0.3s ease-in-out;
     background-color: #000000;
-    border: 1px solid rgba(116, 111, 111, 0.473);
+    border: none;
     z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
     margin: 0 10px;
   }
 
