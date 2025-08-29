@@ -1,6 +1,5 @@
 import React from "react";
 import "./Style/AdminPannel.scss";
-import Picture from "../image/profile.jpg";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaLongArrowAltRight } from "react-icons/fa";
@@ -27,7 +26,7 @@ const NavBarHome = () => {
                   <span>{username}</span>
                 </h3>
                 <div className="img">
-                  <img src={Picture} alt="" />
+                  <img src="/Pictures/Logo.jpg" alt="profile" />
                 </div>
               </div>
             </div>
