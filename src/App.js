@@ -8,7 +8,6 @@ import Dishes from "./Components/menu/Dishes/Dishes";
 import Drinks from "./Components/menu/Drinks/Drinks";
 import Dessart from "./Components/menu/Dessart/Dessart";
 import Pages from "./Components/Pages/Pages/Pages";
-import Contact from "./Components/Contact/Contact/Contact";
 import NoPage from "./Components/NoPage/NoPage";
 import Login from "./Components/Register&Login/Login/Login";
 import Register from "./Components/Register&Login/Register/Register";
@@ -125,7 +124,6 @@ function App() {
         {/* Here for all Compnent in NavBary */}
         <>
           <Route path="pages" element={<Pages />} />
-          <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NoPage/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/booktable" element={<BookTable />} />

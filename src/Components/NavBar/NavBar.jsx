@@ -76,9 +76,6 @@ const NavBar = () => {
             <li>
               <NavLink to="pages" onClick={closeMenu}>Pages</NavLink>
             </li>
-            <li>
-              <NavLink to="contact" onClick={closeMenu}>Contact</NavLink>
-            </li>
           </ul>
           <div className={Css.icon}>
             <Link to="booktable">Book A Table</Link>

@@ -5,11 +5,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #e9ebf0;
+  background-color: #000000; /* Dark background */
   position: fixed;
   inset: 0;
   z-index: 999;
   /* display: none; */
+  color: #ffffff; /* Light text */
 }
 .container {
   width: 100%;
@@ -23,8 +24,8 @@
 .card {
   width: 450px;
   height: 90%;
-  background: #f9f9f9;
-  box-shadow: 0 8px 32px 0 rgba(201, 202, 204, 0.37);
+  background: #1e1e1e; /* Dark card background */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Adjusted shadow */
   backdrop-filter: blur(6.5px);
   border-radius: 15px;
   overflow: hidden;
@@ -44,7 +45,7 @@
 .choose button {
   font-size: 100px;
   background-color: transparent;
-  color: #8783f5;
+  color: #d4af37; /* Gold accent color */
   height: 50%;
   width: 60%;
   display: flex;
@@ -69,16 +70,18 @@
 }
 .choose a {
   text-decoration: none;
-  color: #8783f5;
+  color: #ffffff; /* Light text for links */
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "DM Sans", sans-serif; /* Consistent font */
 }
 .login {
   width: 100%;
   height: 65%;
+  color: #a0a0a0; /* Subtle light gray for text */
 }
 /* Here for media query */
 @media (max-width: 768px) {
