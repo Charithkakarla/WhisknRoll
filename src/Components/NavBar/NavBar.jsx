@@ -6,6 +6,8 @@ import logo from "../Pictures/Logo.jpg";
 import { FaArrowUp, FaUser } from "react-icons/fa6";
 import axios from "axios";
 import { IoIosLogOut } from "react-icons/io";
+import { useAuth } from "../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 const NavBar = () => {
   const [setClass, getClass] = useState(false);
   const Menu = () => {
@@ -26,33 +28,44 @@ const NavBar = () => {
   const [DataUsers, SetDataUser] = useState();
   const [ChangeDisplay, SetChangeDisplay] = useState(false);
   const [DeleteData, SetDeleteData] = useState(true);
+  const { auth, clearAuth } = useAuth();
+  const navigate = useNavigate();
+
   useEffect(() => {
-    try {
-      let Clears = setInterval(() => {
-        if (localStorage.getItem("id") !== null) {
-          let Pid = JSON.parse(localStorage.getItem("id"));
-          axios
-            .get(`https://apis-8gnd.onrender.com/register/${Pid}`)
-            .then((e) => SetDataUser(e.data.data.username));
-          clearInterval(Clears);
+    // fetch username if we have an id from auth context
+    let mounted = true;
+    async function fetchUsername() {
+      try {
+        if (!auth?.id) {
+          SetChangeDisplay(false);
+          return;
+        }
+        const res = await axios.get(`https://apis-8gnd.onrender.com/register/${auth.id}`);
+        if (mounted) {
+          SetDataUser(res.data?.data?.username);
           SetChangeDisplay(true);
           SetDeleteData(false);
-        } else {
-          SetChangeDisplay(false);
         }
-      }, 2000);
-    } catch (err) {
-      console.log(err);
+      } catch (err) {
+        console.error(err);
+        if (mounted) SetChangeDisplay(false);
+      }
     }
-  }, []);
-  window.addEventListener("scroll", eventScroll);
+    fetchUsername();
+
+    // attach scroll listener and cleanup
+    window.addEventListener("scroll", eventScroll);
+    return () => {
+      mounted = false;
+      window.removeEventListener("scroll", eventScroll);
+    };
+  }, [auth]);
+
   const RemoveData = () => {
-    localStorage.removeItem("type");
-    localStorage.removeItem("username");
-    localStorage.removeItem("id");
+    clearAuth();
     SetDeleteData(true);
     SetChangeDisplay(false);
-    window.location.pathname = "/";
+    navigate("/");
   };
   // window.onload = refresh;
   return (
@@ -108,4 +121,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
-// lama arg3 hb2a a3awz afkar fe mood3o login da yzahar awel ma ados 3alla el icon bta3 el User
+

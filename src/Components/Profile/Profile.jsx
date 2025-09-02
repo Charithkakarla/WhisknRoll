@@ -4,26 +4,31 @@ import { Link } from "react-router-dom";
 import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useAuth } from "../../contexts/AuthContext";
 const Profile = () => {
   let random = Math.floor(Math.random() * 360) + 1;
   const [DataUsers, SetDataUser] = useState();
+  const { auth } = useAuth();
   useEffect(() => {
-    try {
-      if (localStorage.getItem("id") !== null) {
-        let Pid = JSON.parse(localStorage.getItem("id"));
-        axios
-          .get(`https://apis-8gnd.onrender.com/register/${Pid}`)
-          .then((e) => {
-            SetDataUser(e.data.data);
-            toast(`Welcome ${e.data.data.username} Data Is Loading Now...!`);
-          });
-      } else {
-        toast.error("You Must login to See Your Profile");
+    let mounted = true;
+    async function loadProfile() {
+      try {
+        if (!auth?.id) {
+          toast.error("You must login to see your profile");
+          return;
+        }
+        const res = await axios.get(`https://apis-8gnd.onrender.com/register/${auth.id}`);
+        if (mounted) {
+          SetDataUser(res.data.data);
+          toast(`Welcome ${res.data.data.username} Data Is Loading Now...!`);
+        }
+      } catch (err) {
+        console.error(err);
       }
-    } catch (err) {
-      console.log(err);
     }
-  }, []);
+    loadProfile();
+    return () => (mounted = false);
+  }, [auth]);
   return (
     <div>
       <div className="parent-profile">

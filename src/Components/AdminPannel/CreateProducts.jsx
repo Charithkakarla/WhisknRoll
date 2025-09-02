@@ -3,9 +3,11 @@ import "./Style/AdminPannel.scss";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 const CreateProducts = () => {
   const Navigate = useNavigate();
-  let token = JSON.parse(localStorage.getItem("token"));
+  const { auth } = useAuth();
+  const token = auth?.token;
   const [formData, setFormData] = useState({
     title: "",
     price: "",

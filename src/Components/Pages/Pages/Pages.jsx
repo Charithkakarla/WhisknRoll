@@ -57,15 +57,7 @@ const Pages = () => {
             <div className={Css.text}>
               <h3>What are the right ingredients to make it delicious?</h3>
               <p>
-                Proin faucibus nec mauris a sodales, sed elementum mi tincidunt.
-                Sed eget viverra egestas nisi in consequat. Fusce sodales augue
-                a accumsa Cras sollicitudin, le ligula, porttitor eu, consequat
-                vitae, eleifend ac, enim. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit lobortis arcu enim urna adipiscing
-                praesent velit viverra sit semper lorem eu cursus ve of all
-                hendrerit elementum morbi curabitur etiam nibh justo, lorem
-                aliquet donec sed sit mi dignissim at ante massa mattis magna
-                sit amet purus gravida quis blandit turpis..
+                At our restaurant, the secret to deliciousness starts with the freshest ingredients. We carefully select seasonal produce, premium cuts, and authentic spices to create bold, unforgettable flavors. Every dish is crafted with passion, balancing quality and creativity. From farm to table, we ensure each ingredient enhances your dining experience. Our dedication to freshness and quality turns every meal into a culinary masterpiece. Taste the difference that real, wholesome ingredients make. Because great food begins with the right choices. Welcome to a world where flavor meets excellence.
               </p>
             </div>
           </div>

@@ -3,11 +3,13 @@ import "./Style/AdminPannel.scss";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 const Products = () => {
   const [setProduct, getProduct] = useState(null);
   const [isLoadingData, setisLoadingData] = useState(false);
   const [getStorage, setStorage] = useState();
-  let alarm = JSON.parse(localStorage.getItem("type"));
+  const { auth } = useAuth();
+  const alarm = auth?.type;
   const handleDelete = async (id) => {
     try {
      if (alarm === "Admin") {
@@ -31,8 +33,8 @@ const Products = () => {
       .get("https://apis-8gnd.onrender.com/allproducts")
       .then((e) => getProduct(e.data.data))
       .catch((err) => console.log(err));
-      setStorage(alarm)
-  }, [isLoadingData]);
+      setStorage(alarm);
+  }, [isLoadingData, alarm]);
   return (
     <div>
       <div className="parent-products">

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./Style/AdminPannel.scss";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useAuth } from "../../contexts/AuthContext";
 const Users = () => {
   const [setApi, getApi] = useState(null);
   const [isLoadingData, setisLoadingData] = useState(false);
+  const { auth } = useAuth();
   const handleDelete = async (id) => {
-    let alarm = JSON.parse(localStorage.getItem("type"));
+    const alarm = auth?.type;
     try {
      if (alarm === "Admin") {
       setisLoadingData(true);

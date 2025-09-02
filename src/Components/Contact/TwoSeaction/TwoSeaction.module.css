@@ -1,0 +1,86 @@
+/* TwoSeaction styles archived (component removed). */
+.parent {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+  position: relative;
+}
+
+.parent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+  pointer-events: none;
+}
+.container {
+  width: 60%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.container .text {
+  width: 250px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container .text h3 {
+  color: #EDEDED;
+  font-family: "Playfair Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 26px;
+}
+.container .text p {
+  color: #A0A0A0;
+  font-family: "Lato", "Inter", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+.container .text:nth-child(1) p {
+  color: #EDEDED !important;
+  font-family: "Playfair Display";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 30px;
+  letter-spacing: -0.72px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Here for Media Query */
+@media (max-width: 1265px) {
+  .parent {
+    height: auto;
+    padding: 20px 0;
+  }
+  .container {
+    gap: 20px;
+    justify-content: center;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    justify-content: flex-start;
+    width: 80%;
+  }
+}

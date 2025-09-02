@@ -6,6 +6,7 @@ import { MdOutlineCreate } from "react-icons/md";
 import { IoCartOutline, IoHomeOutline } from "react-icons/io5";
 import { FiMapPin } from "react-icons/fi";
 import { LuLogOut } from "react-icons/lu";
+import { useAuth } from "../../contexts/AuthContext";
 const MenuDash = () => {
   const [setMenu, getMenu] = useState(false);
   const SizeMenu = () => {
@@ -13,10 +14,9 @@ const MenuDash = () => {
       getMenu(!setMenu);
     }
   };
+  const { clearAuth } = useAuth();
   const RemoveStorage = ()=>{
-    localStorage.removeItem("token")
-    localStorage.removeItem("username")
-    localStorage.removeItem("type")
+    clearAuth();
   }
   return (
     <div>

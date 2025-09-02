@@ -3,8 +3,10 @@ import "./Style/AdminPannel.scss";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { useAuth } from "../../contexts/AuthContext";
 const NavBarHome = () => {
-  let username = JSON.parse(localStorage.getItem("username"));
+  const { auth } = useAuth();
+  const username = auth?.username;
   return (
     <div>
       <div className="parent-navbar-dashbord">
