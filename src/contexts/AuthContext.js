@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-// Firebase removed: fallback to localStorage-only auth
 
 const AuthContext = createContext();
 
@@ -11,9 +10,9 @@ export function AuthProvider({ children }) {
   const [auth, setAuth] = useState({ id: null, username: null, type: null, token: null });
   const [loading, setLoading] = useState(true);
 
-  // initialize from firebase auth state and fallback to localStorage
+  // initialize auth state from localStorage
   useEffect(() => {
-    // Restore legacy localStorage session (no Firebase)
+  // Restore legacy localStorage session
     try {
       const id = localStorage.getItem("id");
       const username = localStorage.getItem("username");
@@ -54,7 +53,7 @@ export function AuthProvider({ children }) {
     } catch (e) {}
   }
 
-  // Legacy localStorage auth helpers (no Firebase)
+  // Legacy localStorage auth helpers
   async function logout() {
     clearAuth();
   }

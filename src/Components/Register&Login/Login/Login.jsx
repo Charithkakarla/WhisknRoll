@@ -8,7 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaRegUserCircle } from "react-icons/fa";
 import Home from "../../Home/Home/Home";
 import { useAuth } from "../../../contexts/AuthContext";
-// Firebase removed: use legacy axios
 const Login = () => {
   const [TakeValue, SetTakeValue] = useState({
     email: "",
