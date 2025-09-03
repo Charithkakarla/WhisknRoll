@@ -1,11 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { auth as firebaseAuth } from "../firebase";
-import {
-  onAuthStateChanged,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut as firebaseSignOut,
-} from "firebase/auth";
+// Firebase removed: fallback to localStorage-only auth
 
 const AuthContext = createContext();
 
@@ -19,53 +13,22 @@ export function AuthProvider({ children }) {
 
   // initialize from firebase auth state and fallback to localStorage
   useEffect(() => {
-    if (!firebaseAuth) {
-      // Firebase not initialized; restore legacy localStorage session
-      // eslint-disable-next-line no-console
-      console.warn("Firebase not initialized: using localStorage fallback for auth state.");
-      try {
-        const id = localStorage.getItem("id");
-        const username = localStorage.getItem("username");
-        const type = localStorage.getItem("type");
-        const token = localStorage.getItem("token");
-        setAuth({
-          id: id ? JSON.parse(id) : null,
-          username: username ? JSON.parse(username) : username,
-          type: type ? JSON.parse(type) : type,
-          token: token ? JSON.parse(token) : token,
-        });
-      } catch (e) {
-        // ignore
-      }
-      setLoading(false);
-      return;
+    // Restore legacy localStorage session (no Firebase)
+    try {
+      const id = localStorage.getItem("id");
+      const username = localStorage.getItem("username");
+      const type = localStorage.getItem("type");
+      const token = localStorage.getItem("token");
+      setAuth({
+        id: id ? JSON.parse(id) : null,
+        username: username ? JSON.parse(username) : username,
+        type: type ? JSON.parse(type) : type,
+        token: token ? JSON.parse(token) : token,
+      });
+    } catch (e) {
+      // ignore
     }
-
-    const unsub = onAuthStateChanged(firebaseAuth, (user) => {
-      if (user) {
-        // basic user info; app can store more in Firestore later
-        const next = { id: user.uid, username: user.email, type: null, token: null };
-        setAuth(next);
-      } else {
-        // fallback to localStorage for legacy sessions when signed out
-        try {
-          const id = localStorage.getItem("id");
-          const username = localStorage.getItem("username");
-          const type = localStorage.getItem("type");
-          const token = localStorage.getItem("token");
-          setAuth({
-            id: id ? JSON.parse(id) : null,
-            username: username ? JSON.parse(username) : username,
-            type: type ? JSON.parse(type) : type,
-            token: token ? JSON.parse(token) : token,
-          });
-        } catch (e) {
-          // ignore
-        }
-      }
-      setLoading(false);
-    });
-    return () => unsub();
+    setLoading(false);
   }, []);
 
   function setAuthData({ id, username, type, token }, persist = true) {
@@ -91,46 +54,12 @@ export function AuthProvider({ children }) {
     } catch (e) {}
   }
 
-  // Firebase wrappers
-  async function signupWithEmail(email, password) {
-  if (!firebaseAuth) throw new Error("Firebase not initialized");
-  const res = await createUserWithEmailAndPassword(firebaseAuth, email, password);
-    const user = res.user;
-    const next = { id: user.uid, username: user.email, type: null, token: null };
-    setAuth(next);
-    // persist legacy fields for compatibility
-    try {
-      localStorage.setItem("id", JSON.stringify(next.id));
-      localStorage.setItem("username", JSON.stringify(next.username));
-    } catch (e) {}
-    return user;
-  }
-
-  async function loginWithEmail(email, password) {
-  if (!firebaseAuth) throw new Error("Firebase not initialized");
-  const res = await signInWithEmailAndPassword(firebaseAuth, email, password);
-    const user = res.user;
-    const next = { id: user.uid, username: user.email, type: null, token: null };
-    setAuth(next);
-    try {
-      localStorage.setItem("id", JSON.stringify(next.id));
-      localStorage.setItem("username", JSON.stringify(next.username));
-    } catch (e) {}
-    return user;
-  }
-
+  // Legacy localStorage auth helpers (no Firebase)
   async function logout() {
-    if (firebaseAuth) {
-      try {
-        await firebaseSignOut(firebaseAuth);
-      } catch (e) {
-        // ignore
-      }
-    }
     clearAuth();
   }
 
-  const value = { auth, setAuthData, clearAuth, signupWithEmail, loginWithEmail, logout, loading };
+  const value = { auth, setAuthData, clearAuth, logout, loading };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

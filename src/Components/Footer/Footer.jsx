@@ -120,7 +120,7 @@ const Footer = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div>  
         </div>
         <h3>
           Copyright © 2025 Whisk & Roll. All Rights Reserved By{" "}

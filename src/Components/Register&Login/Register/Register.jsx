@@ -7,8 +7,6 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../../../contexts/AuthContext";
-import { db } from "../../../firebase";
-import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 
 const Register = () => {
   const [ChangeValue, SetChangeValue] = useState({
@@ -20,43 +18,22 @@ const Register = () => {
   const [error, setError] = useState("");
 
   const Navigate = useNavigate();
-  const { signupWithEmail, setAuthData } = useAuth();
+  const { setAuthData } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
   try {
-      // Try Firebase signup first
-      try {
-        const user = await signupWithEmail(ChangeValue.email, ChangeValue.password);
-        // create Firestore profile (if db configured)
-        if (db && user && user.uid) {
-          await setDoc(doc(db, "users", user.uid), {
-            username: ChangeValue.username,
-            type: "User",
-            createdAt: serverTimestamp(),
-          });
-        }
-        // set type in context
-        setAuthData({ type: "User", username: ChangeValue.username });
-        toast.success("Account created");
-        Navigate("/");
-        return;
-      } catch (fbErr) {
-        // If Firebase not initialized, fallback to legacy API
-        if (fbErr && fbErr.message && fbErr.message.includes("Firebase not initialized")) {
-          // fallback to existing axios register endpoint
-          const response = await axios.post(
-            "https://nodejs-project-agsz.onrender.com/users/register",
-            ChangeValue
-          );
-          console.log(response.data.msg);
-          toast.success("Account created (legacy)");
-          Navigate("/");
-          return;
-        }
-        throw fbErr;
-      }
+      // Use legacy axios register endpoint
+      const response = await axios.post(
+        "https://nodejs-project-agsz.onrender.com/users/register",
+        ChangeValue
+      );
+      // on success update context and navigate
+      setAuthData({ type: "User", username: ChangeValue.username });
+      toast.success("Account created");
+      Navigate("/");
+      return;
     } catch (err) {
       console.error(err);
       const msg = err?.response?.data?.msg || err?.message || "Registration failed";
