@@ -9,8 +9,10 @@ import Drinks from "./Components/menu/Drinks/Drinks";
 import Dessart from "./Components/menu/Dessart/Dessart";
 import Pages from "./Components/Pages/Pages/Pages";
 import NoPage from "./Components/NoPage/NoPage";
-import Login from "./Components/Register&Login/Login/Login";
-import Register from "./Components/Register&Login/Register/Register";
+import Login from "./Components/Auth/Login";
+import Register from "./Components/Auth/Register";
+import ForgotPassword from "./Components/Auth/ForgotPassword";
+import PrivateRoute from "./Components/Auth/PrivateRoute";
 import NavBar from "./Components/NavBar/NavBar";
 import Footer from "./Components/Footer/Footer";
 import CreateProducts from "./Components/AdminPannel/CreateProducts";
@@ -125,10 +127,11 @@ function App() {
         <>
           <Route path="pages" element={<Pages />} />
           <Route path="*" element={<NoPage/>} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/booktable" element={<BookTable />} />
-          <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/booktable" element={<BookTable />} />
+          <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
         </>
         {/* Here for End all Compnent in NavBary */}
       </Routes>

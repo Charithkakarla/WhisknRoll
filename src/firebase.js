@@ -1,39 +1,32 @@
-// Safe Firebase stub for builds where Firebase is intentionally removed.
-// Exports the common symbols (auth, db, helper functions) used across the app
-// but implements them as no-ops or predictable failures to avoid runtime surprises.
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
-// Named exports compatible with existing imports
-export const auth = null;
-export const db = null;
-
-// Call to initialize Firebase — left as a no-op so code can call it safely.
-export function initFirebase() {
-  // no-op: Firebase is intentionally not included in this build.
-}
-
-// Convenience helpers that mirror the firebase API shape used elsewhere but
-// surface clear errors so developers can detect missing Firebase quickly.
-export function signInWithEmailAndPassword(email, password) {
-  return Promise.reject(new Error('Firebase is not configured in this environment.'));
-}
-
-export function createUserWithEmailAndPassword(email, password) {
-  return Promise.reject(new Error('Firebase is not configured in this environment.'));
-}
-
-// onAuthStateChanged typically registers a listener; here we call no callback
-// and return an unsubscribe no-op so callers can safely call the returned function.
-export function onAuthStateChanged(callback) {
-  // Do not call the callback. Return an unsubscribe function.
-  return () => {};
-}
-
-// Default export for any code using default import style
-export default {
-  auth,
-  db,
-  initFirebase,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBXqoOvUhftbkrSEDDGkOHRF4HdBRMZdhk",
+  authDomain: "whisknroll-b0317.firebaseapp.com",
+  projectId: "whisknroll-b0317",
+  storageBucket: "whisknroll-b0317.firebasestorage.app",
+  messagingSenderId: "282265864800",
+  appId: "1:282265864800:web:44c81e2b99c7800c48d105"
 };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase Authentication and get a reference to the service
+export const auth = getAuth(app);
+
+// Initialize Cloud Firestore and get a reference to the service
+export const db = getFirestore(app);
+
+// Initialize authentication providers
+export const googleProvider = new GoogleAuthProvider();
+
+// Phone authentication helper functions
+export { RecaptchaVerifier, signInWithPhoneNumber };
+
+// Export the app instance
+export default app;
