@@ -243,8 +243,8 @@ const BookTable = () => {
                 </div>
               </div>
               <div className="submit">
-                <button type="submit" disabled={!currentUser}>
-                  {currentUser ? "Book Now" : "Login to Book"}
+                <button type="submit" disabled={!currentUser || isLoading}>
+                  {isLoading ? "Booking..." : currentUser ? "Book Now" : "Login to Book"}
                 </button>
               </div>
             </div>
