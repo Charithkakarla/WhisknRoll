@@ -28,7 +28,15 @@ const BookTable = () => {
   const sendData = async (data) => {
     setIsLoading(true);
     try {
-      console.log("Submitting booking:", data);
+      console.log("=== FIREBASE BOOKING DEBUG ===");
+      console.log("1. Current user:", currentUser);
+      console.log("2. User authenticated:", !!currentUser);
+      console.log("3. User UID:", currentUser?.uid);
+
+      // Check if user is authenticated
+      if (!currentUser) {
+        throw new Error("User not authenticated");
+      }
 
       // Prepare booking data for Firestore
       const bookingData = {
@@ -41,24 +49,60 @@ const BookTable = () => {
         userId: currentUser.uid,
         userEmail: currentUser.email,
         createdAt: new Date(),
-        status: "confirmed" // You can add status tracking later
+        status: "confirmed"
       };
 
-      // Save to Firestore - this will automatically create the 'bookings' collection
+      console.log("4. Booking data to save:", bookingData);
+      console.log("5. Attempting to save to Firestore...");
+
+      // Simple approach - use addDoc with collection
       const docRef = await addDoc(collection(db, 'bookings'), bookingData);
+      
+      console.log("6. SUCCESS! Booking saved with ID:", docRef.id);
 
-      console.log("Booking saved with ID:", docRef.id);
+      // Create a detailed success message to replace the alert
+      const bookingDate = new Date(data.date).toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
 
-      // Success message
-      let message = `✅ Thank you ${data.name}!\n\nYour table has been booked for ${data.guests} guest${data.guests > 1 ? 's' : ''} on ${data.date} at ${data.time}.\n\nPhone: ${data.phone}`;
+      const [hours, minutes] = data.time.split(':');
+      const timeObj = new Date();
+      timeObj.setHours(parseInt(hours), parseInt(minutes));
+      const bookingTime = timeObj.toLocaleTimeString('en-US', {
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
 
+      let successMessage = `🎉 BOOKING CONFIRMED! 🎉\n\n`;
+      successMessage += `✅ Thank you, ${data.name}!\n`;
+      successMessage += `Your table reservation has been successfully confirmed.\n\n`;
+      successMessage += `📋 BOOKING DETAILS:\n`;
+      successMessage += `━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+      successMessage += `👤 Guest Name: ${data.name}\n`;
+      successMessage += `📞 Phone: ${data.phone}\n`;
+      successMessage += `📅 Date: ${bookingDate}\n`;
+      successMessage += `🕒 Time: ${bookingTime}\n`;
+      successMessage += `👥 Guests: ${data.guests} ${parseInt(data.guests) > 1 ? 'guests' : 'guest'}\n`;
+      
       if (data.specialRequests) {
-        message += `\n\nSpecial Requests: ${data.specialRequests}`;
+        successMessage += `📝 Special Requests: ${data.specialRequests}\n`;
       }
+      
+      successMessage += `\n🏷️ Booking ID: ${docRef.id}\n`;
+      successMessage += `━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+      successMessage += `🏪 WHISK & ROLL\n`;
+      successMessage += `📍 Banjara Hills, Hyderabad\n`;
+      successMessage += `📞 Restaurant: +91 9876543210\n`;
+      successMessage += `📧 Email: WhisknRoll@gmail.com\n\n`;
+      successMessage += `⏰ Please arrive 10 minutes before your scheduled time.\n`;
+      successMessage += `📞 For changes or cancellations, call us at least 2 hours in advance.\n\n`;
+      successMessage += `Thank you for choosing Whisk & Roll! 🍽️`;
 
-      message += `\n\n📋 Booking ID: ${docRef.id}`;
-
-      alert(message);
+      alert(successMessage);
 
       // Reset form after successful booking
       setGetValue({

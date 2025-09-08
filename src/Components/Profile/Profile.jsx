@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Profile.scss";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useAuth } from "../../contexts/AuthContext";
@@ -47,30 +46,6 @@ const Profile = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Eligendi esse aliquid doloribus ipsam architec?
               </p>
-              <p>Social Media</p>
-              <div className="icons">
-                <Link
-                  style={{ backgroundColor: `hsl(${random}, 70%, 54%)` }}
-                  target="_blank"
-                  to="https://www.facebook.com/kakarla.charith"
-                >
-                  <FaFacebookF />
-                </Link>
-                <Link
-                  style={{ backgroundColor: `hsl(${random}, 70%, 54%)` }}
-                  target="_blank"
-                  to="https://github.com/KakarlaCharith"
-                >
-                  <FaGithub />
-                </Link>
-                <Link
-                  style={{ backgroundColor: `hsl(${random}, 70%, 54%)` }}
-                  target="_blank"
-                  to="https://www.linkedin.com/in/kakarla-charith-377512295/"
-                >
-                  <FaLinkedinIn />
-                </Link>
-              </div>
               <Link
                 onClick={() => window.scrollTo(0, 0)}
                 style={{ backgroundColor: `hsl(${random}, 70%, 54%)` }}

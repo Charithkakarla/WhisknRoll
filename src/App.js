@@ -17,10 +17,8 @@ import NavBar from "./Components/NavBar/NavBar";
 import Footer from "./Components/Footer/Footer";
 import CreateProducts from "./Components/AdminPannel/CreateProducts";
 import Users from "./Components/AdminPannel/Users";
-import Maps from "./Components/AdminPannel/Maps";
 import Products from "./Components/AdminPannel/Products";
 import { Toaster } from "react-hot-toast";
-import TotalUsing from "./Components/AdminPannel/TotalUsing";
 import EditProduct from "./Components/AdminPannel/EditProduct";
 import DashBord from "./Components/AdminPannel/DashBord";
 import BookTable from "./Components/BookTable/BookTable";
@@ -28,7 +26,6 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Profile from "./Components/Profile/Profile";
-// import Loading from "./Components/Loading/Loading";
 function App() {
   useEffect((r) => {
     Aos.init({ duration: 800 });
@@ -80,7 +77,6 @@ function App() {
           <Route
             path="/admin/dashbord"
             element={<DashBord />}
-            children={<Route path="/admin/dashbord" element={<TotalUsing />} />}
           />
           <Route
             path="/admin/dashbord"
@@ -109,11 +105,6 @@ function App() {
           <Route
             path="/admin/dashbord"
             element={<DashBord />}
-            children={<Route path="/admin/dashbord/maps" element={<Maps />} />}
-          />
-          <Route
-            path="/admin/dashbord"
-            element={<DashBord />}
             children={
               <Route
                 path="/admin/dashbord/products/:id/edit"
@@ -135,7 +126,6 @@ function App() {
         </>
         {/* Here for End all Compnent in NavBary */}
       </Routes>
-      {/* <Loading/> */}
       <Footer />
     </div>
   );

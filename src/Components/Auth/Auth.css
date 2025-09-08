@@ -149,34 +149,6 @@
   background: rgba(212, 175, 55, 0.5);
 }
 
-.auth-method-selector {
-  display: flex;
-  background: rgba(18, 18, 18, 0.8);
-  border-radius: 8px;
-  padding: 4px;
-  margin-bottom: 30px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-}
-
-.auth-method-selector button {
-  flex: 1;
-  padding: 10px 16px;
-  border: none;
-  background: transparent;
-  border-radius: 6px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: "DM Sans", sans-serif;
-}
-
-.auth-method-selector button.active {
-  background: #D4AF37;
-  color: #000000;
-  font-weight: 600;
-}
-
 .auth-divider {
   display: flex;
   align-items: center;
@@ -220,19 +192,6 @@
   border-color: #D4AF37;
   transform: translateY(-1px);
   color: #ffffff;
-}
-
-.phone-auth {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.phone-input-section,
-.verification-section {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .auth-footer {

@@ -26,6 +26,19 @@ const NavBar = () => {
       SetChangeDisplay(false);
     }
   }, [currentUser]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   // window.onload = refresh;
   return (
     <div>

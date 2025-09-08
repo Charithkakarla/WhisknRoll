@@ -653,30 +653,6 @@
 }
 // Here End Style for Update Products
 
-// Here Style for Maps
-.parent-map {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 70%;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  .container-map {
-    width: 96%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    iframe {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
-// Here End Style for Maps
-
 // Here Style for All Products
 .parent-products {
   position: absolute;

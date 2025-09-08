@@ -7,23 +7,11 @@ import FastFood from "../FastFood/FastFood";
 import Customers from "../Customers/Customers";
 import Articles from "../Articles/Articles";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaGithub, FaLinkedinIn, FaPhone, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import TextType from "../../TextType/TextType";
 const Home = () => {
   return (
     <div>
       <div className={Css.parent}>
-        <div className={Css.socialIcons}>
-          <Link to="https://www.instagram.com/charith__kakarla/">
-            <FaInstagram />
-          </Link>
-          <Link to="https://github.com/Charithkakarla">
-            <FaGithub />
-          </Link>
-          <Link to="https://www.linkedin.com/in/kakarla-charith-377512295/">
-            <FaLinkedinIn />
-          </Link>
-        </div>
         <div className={Css.container}>
           <div className={Css.card}>
             <h3>

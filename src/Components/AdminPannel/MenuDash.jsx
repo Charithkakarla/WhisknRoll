@@ -4,7 +4,6 @@ import { CiBookmarkCheck, CiMenuFries } from "react-icons/ci";
 import { NavLink } from "react-router-dom";
 import { MdOutlineCreate } from "react-icons/md";
 import { IoCartOutline, IoHomeOutline } from "react-icons/io5";
-import { FiMapPin } from "react-icons/fi";
 import { LuLogOut } from "react-icons/lu";
 import { useAuth } from "../../contexts/AuthContext";
 const MenuDash = () => {
@@ -34,7 +33,6 @@ const MenuDash = () => {
               <li><NavLink to="/admin/dashbord/users" ><CiBookmarkCheck/></NavLink></li>
               <li><NavLink to="/admin/dashbord/products" ><IoCartOutline /></NavLink></li>
               <li><NavLink to="/admin/dashbord/create" ><MdOutlineCreate/></NavLink></li>
-              <li><NavLink to="/admin/dashbord/maps" ><FiMapPin /></NavLink></li>
               <li><NavLink className="out" to="/" onClick={()=>RemoveStorage()} ><LuLogOut/></NavLink></li>
             </ul>
             <ul className={`${setMenu ? "show" : "hide"}`}>
@@ -42,7 +40,6 @@ const MenuDash = () => {
               <li><NavLink to="/admin/dashbord/users" ><CiBookmarkCheck/> Book A Table</NavLink></li>
               <li><NavLink to="/admin/dashbord/products" ><IoCartOutline /> Products</NavLink></li>
               <li><NavLink to="/admin/dashbord/create" ><MdOutlineCreate/>Create</NavLink></li>
-              <li><NavLink to="/admin/dashbord/maps" ><FiMapPin/>Maps</NavLink></li>
               <li><NavLink className="out" to="/" onClick={()=>RemoveStorage()}><LuLogOut/> Log Out</NavLink></li>
             </ul>
           </div>

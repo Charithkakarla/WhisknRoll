@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { FaUser, FaCamera, FaEnvelope, FaPhone, FaSignOutAlt } from "react-icons/fa";
+import { FaUser, FaCamera, FaEnvelope, FaSignOutAlt, FaQuestionCircle, FaHeadset } from "react-icons/fa";
 import "./ProfileDropdown.css";
 
 const ProfileDropdown = () => {
@@ -46,9 +46,13 @@ const ProfileDropdown = () => {
         // Handle email edit
         alert('Email edit functionality coming soon!');
         break;
-      case 'editPhone':
-        // Handle phone edit
-        alert('Phone edit functionality coming soon!');
+      case 'help':
+        // Navigate to help section
+        navigate('/help');
+        break;
+      case 'contact':
+        // Navigate to contact section
+        navigate('/contact');
         break;
       default:
         break;
@@ -112,10 +116,18 @@ const ProfileDropdown = () => {
 
             <button
               className="dropdown-item"
-              onClick={() => handleMenuItemClick('editPhone')}
+              onClick={() => handleMenuItemClick('help')}
             >
-              <FaPhone className="dropdown-icon" />
-              <span>Edit Phone Number</span>
+              <FaQuestionCircle className="dropdown-icon" />
+              <span>Help & Support</span>
+            </button>
+
+            <button
+              className="dropdown-item"
+              onClick={() => handleMenuItemClick('contact')}
+            >
+              <FaHeadset className="dropdown-icon" />
+              <span>Contact Us</span>
             </button>
           </div>
 

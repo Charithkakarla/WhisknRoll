@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -24,9 +24,6 @@ export const db = getFirestore(app);
 
 // Initialize authentication providers
 export const googleProvider = new GoogleAuthProvider();
-
-// Phone authentication helper functions
-export { RecaptchaVerifier, signInWithPhoneNumber };
 
 // Export the app instance
 export default app;
